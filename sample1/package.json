@@ -1,0 +1,9 @@
+{
+  "name": "sample1-app",
+  "version": "0.1.0",
+  "main": "main.js",
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron-builder": "^19.27.3"
+  }
+}

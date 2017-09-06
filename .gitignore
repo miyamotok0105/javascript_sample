@@ -1,0 +1,5 @@
+*-darwin-*
+*-linux-*
+*-win32-*
+.DS_Store
+*node_modules*
