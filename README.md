@@ -5,6 +5,15 @@
 
     npm update -g npm
 
+- babel
+
+クロスコンパイラ。
+
+    npm install --global babel-cli babel-preset-es2015
+    npm install -D babel-preset-es2015
+
+
+
 - electronの確認
 
     npm install --save-dev devtron
