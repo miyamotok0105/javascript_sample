@@ -1,4 +1,9 @@
 
+#ReactDOM
+
+仮想DOMはDOMの状態をメモリ上に保持して操作するのでパフォーマンスが良い。    
+
+
     npm init -y
     npm install --save-dev babel-cli babel-preset-react babel-preset-es2015
     echo "{ \"presets\": [\"es2015\", \"react\"]}" > .babelrc

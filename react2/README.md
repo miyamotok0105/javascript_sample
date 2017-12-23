@@ -3,7 +3,6 @@
     npm install --save-dev babel-cli babel-preset-react babel-preset-es2015
     echo "{ \"presets\": [\"es2015\", \"react\"]}" > .babelrc
 
-
 package.jsonに追加
 
       "scripts": {
