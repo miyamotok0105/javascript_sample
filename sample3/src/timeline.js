@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import request from 'superagent'
 import styles from './styles'
 
-export default class SNSTimeline extends Component {
+export default class Timeline extends Component {
   constructor (props) {
     super(props)
     this.state = { timelines: [], comment: '' }
@@ -12,30 +12,30 @@ export default class SNSTimeline extends Component {
   }
   loadTimelines () {
     request
-      .get('/api/get_friends_timeline')
+      .get('/api/get_timeline')
       .query({
-        userid: window.localStorage.sns_id,
-        token: window.localStorage.sns_auth_token
+        // userid: window.localStorage.sns_id,
+        // token: window.localStorage.sns_auth_token
       })
       .end((err, res) => {
         if (err) return
         this.setState({timelines: res.body.timelines})
       })
   }
-  post () {
-    request
-      .get('/api/add_timeline')
-      .query({
-        userid: window.localStorage.sns_id,
-        token: window.localStorage.sns_auth_token,
-        comment: this.state.comment
-      })
-      .end((err, res) => {
-        if (err) return
-        this.setState({comment: ''})
-        this.loadTimelines()
-      })
-  }
+  // post () {
+  //   request
+  //     .get('/api/add_timeline')
+  //     .query({
+  //       userid: window.localStorage.sns_id,
+  //       token: window.localStorage.sns_auth_token,
+  //       comment: this.state.comment
+  //     })
+  //     .end((err, res) => {
+  //       if (err) return
+  //       this.setState({comment: ''})
+  //       this.loadTimelines()
+  //     })
+  // }
   render () {
     const timelines = this.state.timelines.map(e => {
       return (
@@ -50,15 +50,8 @@ export default class SNSTimeline extends Component {
     return (
       <div>
         <h1>タイムライン</h1>
-        <div>
-          <input value={this.state.comment} size={40}
-            onChange={e => this.setState({comment: e.target.value})} />
-          <button onClick={e => this.post()}>書き込む</button>
-        </div>
         <div>{timelines}</div>
         <hr />
-        <p><a href={'/users'}>→友達を追加する</a></p>
-        <p><a href={'/login'}>→別のユーザでログイン</a></p>
       </div>
     )
   }

@@ -15,5 +15,7 @@ package.jsonに追加
     },
 
     npm run build
+    npm start
 
+    http://localhost:3001
     
