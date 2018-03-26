@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+  <script>
+
+    function showModal() {
+      var modal = document.querySelector('ons-modal');
+      modal.show();
+      setTimeout(function() {
+        modal.hide();
+      }, 2000);
+    }
+
+  </script>
+</head>
+<body>
+
+<ons-page>
+  <ons-toolbar>
+    <div class="center">Modal</div>
+  </ons-toolbar>
+
+  <p style="text-align: center">
+    <ons-button onclick="showModal()">Show modal</ons-button>
+  </p>
+</ons-page>
+
+<ons-modal direction="up">
+  <div style="text-align: center">
+    <p>
+      <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Loading...
+    </p>
+  </div>
+</ons-modal>
+
+</body>
+</html>

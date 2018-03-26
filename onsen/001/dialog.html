@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+  <script>
+
+    var showTemplateDialog = function() {
+      var dialog = document.getElementById('my-dialog');
+
+      if (dialog) {
+        dialog.show();
+      } else {
+        ons.createElement('dialog.html', { append: true })
+          .then(function(dialog) {
+            dialog.show();
+          });
+      }
+    };
+
+    var hideDialog = function(id) {
+      document
+        .getElementById(id)
+        .hide();
+    };
+
+  </script>
+</head>
+<body>
+
+<ons-page>
+  <ons-button onclick="showTemplateDialog()">Show Dialog</ons-button>
+</ons-page>
+
+<template id="dialog.html">
+  <ons-dialog id="my-dialog">
+    <div style="text-align: center; padding: 10px;">
+      <p>
+        This is a simple dialog!
+      </p>
+
+      <p>
+        <ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+</template>
+
+</body>
+</html>

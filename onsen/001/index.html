@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="node_modules/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="node_modules/onsenui/css/onsen-css-components.css">
+    <script src="node_modules/onsenui/js/onsenui.min.js"></script>
+
+</head>
+<body>
+    <ons-page>
+        <ons-toolbar>
+            <div class="center">Onsen UI</div>
+        </ons-toolbar>
+ 
+        <div style="text-align: center;">
+            <p>Hello World!</p>
+            <ons-button onclick="ons.notification.alert('Onsen UI alert');">Click Me!</ons-button>
+        </div>
+    </ons-page>
+</body>
+</html>

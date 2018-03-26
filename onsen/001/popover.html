@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+  <script>
+
+    var showPopover = function(target) {
+      document
+        .getElementById('popover')
+        .show(target);
+    };
+
+    var hidePopover = function() {
+      document
+        .getElementById('popover')
+        .hide();
+    };
+
+  </script>
+</head>
+<body>
+
+<ons-page>
+  <ons-toolbar>
+    <div class="center">Popover</div>
+  </ons-toolbar>
+
+  <p style="text-align: center; margin: 50% 0;">
+    <ons-button onclick="showPopover(this)">Click me</ons-button>
+  </p>
+</ons-page>
+
+<ons-popover direction="up" id="popover">
+  <div style="padding: 10px; text-align: center;">
+    <p>
+      This is a popover
+    </p>
+    <p>
+      <ons-button onclick="hidePopover()">Close</ons-button>
+    </p>
+  </div>
+</ons-popover>
+
+</body>
+</html>
