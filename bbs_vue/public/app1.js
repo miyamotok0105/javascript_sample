@@ -11,6 +11,8 @@ var app = new Vue({
     data: {
       message: 'チャットだよー',
       results: [],
+      name: "",
+      body: "",
       talkList: [
         { id: 0, text: 'Vegetables' },
         { id: 1, text: 'Cheese' },
@@ -37,7 +39,24 @@ var app = new Vue({
               .catch(error => {
                 console.log(error);
               });
+        },
+        postTalk() {
+            console.log("postTalk!!!!");
+            axios.get('http://localhost:3001/api/write', {
+                params: {
+                    name: this.name,
+                    body: this.body
+                }
+            })
+            .then(response => {
+                this.getTalks('room1');
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error);
+            });
         }
+
     }
 });
 
