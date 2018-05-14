@@ -62,3 +62,8 @@ watchプロパティで監視もできるが、
 npm install -g json-server
 ```
 
+```
+json-server db1.json
+```
+
+
