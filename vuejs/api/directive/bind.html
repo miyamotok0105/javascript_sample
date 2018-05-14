@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The greatest news app ever</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+  </head>
+  <body>
+
+    <div id="app">
+
+        <!-- 属性を束縛 -->
+        <h2>属性を束縛</h2>
+        <img width="300" height="100" v-bind:src="imageSrc">
+        <!-- 省略記法 -->
+        <h2>省略記法</h2>
+        <img width="300" height="100" :src="imageSrc">
+        <!-- インライン文字列連結 -->
+        <h2>インライン文字列連結</h2>
+        <img width="300" height="100" :src="'./images/' + fileName">
+        
+        <!-- クラスバインディング -->
+        <h2>クラスバインディング</h2>
+        <div :class="{ red: isRed }"></div>
+        <div :class="[classA, classB]"></div>
+        <div :class="[classA, { classB: isB, classC: isC }]">
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script src="bind.js"></script>
+  </body>
+</html>
