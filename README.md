@@ -45,6 +45,13 @@ W3C 版 HTML 5.1 変更点まとめ
 https://qiita.com/mijabi/items/2ff89fba60652771ea66    
 
 
+# vue js 
+
+https://github.com/PacktPublishing/Vuejs-2-Cookbook    
+https://github.com/PacktPublishing/Learning-Vuejs-2    
+https://github.com/PacktPublishing/Vue.js-2-Design-Patterns-and-Best-Practices    
+
+
 # 参考
 
 いまどきのJSプログラマーのためのNode.jsとReactアプリケーション開発テクニック    
