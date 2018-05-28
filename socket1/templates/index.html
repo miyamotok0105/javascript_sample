@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>graph test</title>
+</head>
+<body>
+  <h1>Real time chart</h1>
+  <div id="graph" class="epoch" style="height: 200px;"></div>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/js/epoch.min.js" charset="utf-8"></script>
+  <script src="" charset="utf-8"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/epoch/0.8.4/css/epoch.min.css" rel="stylesheet">
+  
+  <script type="text/javascript">
+  var ws = new WebSocket("ws://localhost:8000/publish");
+  var data = [
+      { label: "Series 1", values: [] },
+      { label: "Series 2", values: [] },
+    ];
+  var lineChart = $('#graph').epoch({
+    type: 'time.line',
+    data: data,
+    axes: ['left', 'right', 'bottom']
+  });
+  ws.onmessage = function(msg) {
+    var current = JSON.parse(msg.data);
+    lineChart.push(current);
+  };
+  </script>
+</body>
+</html>
