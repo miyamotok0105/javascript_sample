@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1></h1>
+
+    <h1 id="msg"></h1>
+    <h1 id="msg2"></h1>
+    <h1 id="msg3"></h1>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+    <script type="text/javascript" src="./001.js"></script>
+    <script type="text/javascript">
+        //静的に書いてるので使い回せない
+        document.querySelector("#msg").innerHTML = "<h1>hello world</h1>";
+
+        //動的にはなったが、HTMLの処理しかできない
+        function printMessage(elementId, format, message) {
+            document.querySelector(`#${elementId}`).innerHTML = `<${format}>${message}</${format}>`;
+        }
+        printMessage("msg2", "h1", "hello world!");
+
+
+
+        //こんな書き方の方が関数型ぽい
+        // var printMessage2 = run(addToDom("msg3"), h1, echo);
+        // printMessage2("hello world");
+         
+         
+    </script>
+</body>
+</html>
