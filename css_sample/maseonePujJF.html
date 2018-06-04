@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<head>
+
+<style type="text/css">
+    /*このcssやばいな。。*/
+    body{
+        margin: 0;
+    }
+    input{
+        display: none;
+    }
+    h1{
+        margin: 10px auto;
+        text-align: center;
+        font-family: 'Boogaloo', cursive;
+        font-size: 3em;
+        text-shadow: 3px 3px 0px #FC8570 ;
+    }
+    p{
+        font-family: Arial;
+        text-align: center;
+        font-size: .8em;
+    }
+    a{
+        color: #FC8570;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /*CONTAINER*/
+
+    .cont{
+        margin: 20px auto;
+        display: block;
+        width:700px;
+        height: 420px;
+        border: solid 2px #31322C;
+        overflow: hidden;
+    }
+    img{
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        background-size: contain;
+        display: inline-block;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+    .image{
+        width: 2800px;
+        height: 400px
+    }
+
+    /*BUTTON PLAY&STOP*/
+
+    .butPlay{
+        position: absolute;
+        margin: 2px;
+        width: 30px;
+        height: 30px;
+        z-index: 2;
+        background: rgba(75,78,67,.6);
+        display: block;
+        text-align: center;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+    }
+    .butPlay:after{
+        content: "▶";
+        color: rgba(240,240,240,.8);
+        font-size: 18pt;
+    }
+    .butPlay:hover{
+        cursor: pointer;
+        background: rgba(75,78,67,.6);
+    }
+    .butStop{
+        position: absolute;
+        text-align: center;
+        margin: 2px;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+        background: rgba(75,78,67,.6);
+        display: none;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+    }
+    .butStop:hover{
+        cursor: pointer;
+        background: rgba(75,78,67,.6);
+    }
+    .butStop:after{
+        content: "∎";
+        color: rgba(240,240,240,.8);
+        font-size: 17pt;
+        z-index: 5;
+        vertical-align: middle;
+        font-weight: bolder;
+    }
+
+    /*BOTTOM LINE*/
+
+    .line{
+        display: block;
+        width: 0px;
+        height: 20px;
+        background: #9D3CFF;
+    }
+    .but{
+        position: absolute;
+        width: 700px;
+        height: 20px;
+        margin-top:-20px;
+        overflow: visible;
+    }
+    .select1, .select2, .select3, .select4{
+        display: inline-block;
+        float: left;
+        width: 174px;
+        height: 20px;
+        border-right: 1px solid #ACAE9F;
+        background: rgba(4,106,75,.6);
+        z-index: 5;
+    }
+    .select4{
+        width: 175px;
+        border: none;
+    }
+    .select1:hover{
+        background: rgba(19,56,5,.7);
+        cursor: pointer;
+    }
+    .select2:hover{
+        background: rgba(19,56,5,.7);
+        cursor: pointer;
+    }
+    .select3:hover{
+        background: rgba(19,56,5,.7);
+        cursor: pointer;
+    }
+    .select4:hover{
+        background: rgba(19,56,5,.7);
+        cursor: pointer;
+    }
+    .tooltip{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent #2DAA8D transparent ;
+        border-width: 8px 8px 12px 8px;
+        margin: -20px 0 0 77px;
+    }
+
+    /*INPUT CHECKED*/
+
+    #play:checked ~ .cont .line{
+        -webkit-animation: linew 16s linear infinite;
+        -moz-animation: linew 16s linear infinite;
+        -ms-animation: linew 16s linear infinite;
+        -o-animation: linew 16s linear infinite;
+        animation: linew 16s linear infinite;
+    }
+    #play:checked ~ .cont .image{
+        -webkit-animation: alls 16s linear infinite;
+        -moz-animation: alls 16s linear infinite;
+        -ms-animation: alls 16s linear infinite;
+        -o-animation: alls 16s linear infinite;
+        animation: alls 16s linear infinite;
+    }
+    #play:checked ~ .cont .but .tooltip{
+        -webkit-animation: tooltip 16s linear infinite;
+        -moz-animation: tooltip 16s linear infinite;
+        -ms-animation: tooltip 16s linear infinite;
+        -o-animation: tooltip 16s linear infinite;
+        animation: tooltip 16s linear infinite;
+    }
+    #play:checked ~ .cont .butPlay{
+        display: none;
+    }
+    #play:checked ~ .cont .butStop{
+        display: block;
+    }
+
+    #slide2:checked ~ .cont .image{ margin-left:-700px;}
+    #slide2:checked ~ .cont .but .tooltip{ margin-left: 251px;}
+    #slide3:checked ~ .cont .image{ margin-left:-1400px;}
+    #slide3:checked ~ .cont .but .tooltip{ margin-left: 428px;}
+    #slide4:checked ~ .cont .image{ margin-left:-2100px;}
+    #slide4:checked ~ .cont .but .tooltip{ margin-left: 604px;}
+
+    /*ANIMATION*/
+
+    @-webkit-keyframes linew{
+        0%{width: 0px;}
+        25%{width: 186px;}
+        50%{width: 362px;}
+        75%{width: 534px;}
+        100%{width: 714px;}
+    }
+    @-webkit-keyframes alls{
+        0%{margin-left: 0px;}
+        23%{margin-left: 0px;-webkit-filter: blur(0px);}
+        24%{-webkit-filter: blur(10px);}
+        25%{margin-left:-700px;-webkit-filter: blur(0px); }
+        48%{margin-left: -700px;-webkit-filter: blur(0px);}
+        49%{-webkit-filter: blur(10px);}
+        50%{margin-left: -1400px;-webkit-filter: blur(0px);}
+        73%{margin-left: -1400px;-webkit-filter: blur(0px);}
+        74%{-webkit-filter: blur(10px);}
+        75%{margin-left: -2100px;-webkit-filter: blur(0px);}
+        98%{margin-left: -2100px;-webkit-filter: blur(0px);}
+        99%{-webkit-filter: blur(10px);}
+        100%{margin-left: 0px;-webkit-filter: blur(0px);}
+    }
+    @-webkit-keyframes tooltip{
+        0%{margin-left: 77px;}
+        23%{margin-left: 77px;}
+        25%{margin-left:251px; }
+        48%{margin-left: 251px;}
+        50%{margin-left: 428px;}
+        73%{margin-left: 428px;}
+        75%{margin-left: 604px;}
+        98%{margin-left: 604px;}
+        100%{margin-left: 77px;}
+    }
+
+    @keyframes linew{
+        0%{width: 0px;}
+        25%{width: 186px;}
+        50%{width: 362px;}
+        75%{width: 534px;}
+        100%{width: 714px;}
+    }
+    @keyframes alls{
+        0%{margin-left: 0px;}
+        23%{margin-left: 0px;}
+        25%{margin-left:-700px; }
+        48%{margin-left: -700px;}
+        50%{margin-left: -1400px;}
+        73%{margin-left: -1400px;}
+        75%{margin-left: -2100px;}
+        98%{margin-left: -2100px;}
+        100%{margin-left: 0px;}
+    }
+    @keyframes tooltip{
+        0%{margin-left: 77px;}
+        23%{margin-left: 77px;}
+        25%{margin-left:251px;}
+        48%{margin-left: 251px;}
+        50%{margin-left: 428px;}
+        73%{margin-left: 428px;}
+        75%{margin-left: 604px;}
+        98%{margin-left: 604px;}
+        100%{margin-left: 77px;}
+    }
+
+
+    .image, .tooltip{-webkit-transition: all 500ms cubic-bezier(0.350, 0.080, 0.905, 0.460); 
+       -moz-transition: all 500ms cubic-bezier(0.350, 0.080, 0.905, 0.460); 
+        -ms-transition: all 500ms cubic-bezier(0.350, 0.080, 0.905, 0.460); 
+         -o-transition: all 500ms cubic-bezier(0.350, 0.080, 0.905, 0.460); 
+            transition: all 500ms cubic-bezier(0.350, 0.080, 0.905, 0.460); /* custom */
+
+    -webkit-transition-timing-function: cubic-bezier(0.350, 0.080, 0.905, 0.460); 
+       -moz-transition-timing-function: cubic-bezier(0.350, 0.080, 0.905, 0.460); 
+        -ms-transition-timing-function: cubic-bezier(0.350, 0.080, 0.905, 0.460); 
+         -o-transition-timing-function: cubic-bezier(0.350, 0.080, 0.905, 0.460); 
+            transition-timing-function: cubic-bezier(0.350, 0.080, 0.905, 0.460); /* custom */
+        }
+
+</style>
+</head>
+<body>
+  <!-- by Troshkin Pavel "vk.com/troshkin_pavel" Fully compatible with Chrome. All questions and suggestions please send me a mail grommy03@gmail.com -->
+    <link href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
+  
+    <header>
+        <h1>Auto-Play CSS Slider! Without JS!</h1>
+    </header>
+
+    <!--    INPUT FOR BUTTON SELECT SLIDE -->
+    <input type="radio" name="next" id="slide1">
+    <input type="radio" name="next" id="slide2">
+    <input type="radio" name="next" id="slide3">
+    <input type="radio" name="next" id="slide4">
+
+    <!--    INPUT FOR BUTTON STOP&PLAY -->
+    <input type="radio" name="sto" id="play" checked>
+    <input type="radio" name="sto" id="stop">
+
+    <!-- CONTAINER -->
+    <div class="cont">
+
+        <!-- BUTTON PLAY&STOP -->
+        <label for="play" class="butPlay" onclick=""></label>
+        <label for="stop" class="butStop" onclick=""></label>
+
+        <!-- IMAGE -->
+        <div class="image">
+            <img src="http://s017.radikal.ru/i432/1310/37/f331c96eef02.jpg" class="oneP"    alt="Flash">
+            <img src="http://s004.radikal.ru/i208/1310/09/7a8e37a9e719.jpg" class="twoP"    alt="Superman">
+            <img src="http://s020.radikal.ru/i713/1310/5f/a15fcdeb8fe8.jpg" class="threeP" alt="Team">
+            <img src="http://s019.radikal.ru/i639/1310/02/1e3d78802280.jpg" class="fourP"   alt="Joker">
+        </div>
+
+        <!-- ANIMATION LINE -->
+        <div class="line"></div> 
+
+        <!-- BOTTOM LINE -->
+        <div class="but">
+            <label for="slide1" class="select1" onclick=""></label>
+            <label for="slide2" class="select2" onclick=""></label>
+            <label for="slide3" class="select3" onclick=""></label>
+            <label for="slide4" class="select4" onclick=""></label>
+            <div class="tooltip"></div>
+        </div>
+
+    </div>
+    <footer>
+        <p>2013&#9426;. Image from <a href="http://yalestewart.deviantart.com/">YaleStewart</a></p>
+    </footer>    
+</body>

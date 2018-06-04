@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transition</title>
+<style type="text/css">
+.box {
+width : 100px;
+height : 100px;
+background : #ccc;
+/*  */
+transition-property : all;
+/* アニメーションの開始から終了までの所要時間を指定 */
+transition-duration : 300ms;
+/* アニメーションの遅延時間を指定 */
+transition-delay : 50ms;
+/* イージングを指定 */
+transition-timing-function : ease;
+}
+.box:hover {
+background : #ecc;
+width : 500px;
+}
+
+.box2 {
+width : 100px;
+height : 100px;
+background : #ccc;
+transition-property : all;
+transition-duration : 50ms;/*小さくすると早くなる*/
+transition-delay : 50ms;
+transition-timing-function : linear;
+}
+.box2:hover {
+background : #ecc;
+width : 500px;
+}
+</style>
+</head>
+<body>
+シュンシュンするよー。
+
+<div class="box"></div>
+<div class="box2"></div>
+<div class="box"></div>
+<div class="box2"></div>
+<div class="box"></div>
+<div class="box2"></div>
+<div class="box"></div>
+<div class="box2"></div>
+</body>
+</html>

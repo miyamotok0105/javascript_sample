@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    #root {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      min-width: 1100px; min-height: 650px;
+      background-color: #eee;
+    }
+
+    #screen {
+      position: absolute;
+      left: calc(50% - 330px);
+      top: calc(50% - 235px);
+      width: 650px; height: 450px;
+      background-color: #fff;
+      border: solid 10px #fff;
+      box-shadow: 0 0 20px #444;
+      overflow: hidden;
+    }
+
+    .images {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .images .image {
+      position: absolute;
+      top: 0; left: 0;
+      width: 0%; height: 100%;
+      overflow: hidden;
+    }
+    .images .image:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0; left: 0;
+      width: 650px; height: 450px;
+      background-size: cover;
+      background-position: center;
+    }
+    /*nth-child擬似クラスでn番目の子要素になんかする*/
+    /*after擬似クラスで後ろになんか処理する*/
+    .images .image:nth-child(1):after { background-image: url(./1.png); }
+    .images .image:nth-child(2):after { background-image: url(./2.png); }
+    .images .image:nth-child(3):after { background-image: url(./3.png); }
+    .images .image:nth-child(4):after { background-image: url(./4.png); }
+
+    .paint {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #444;
+    }
+
+    .demo {
+      animation: fadeout 0.5s ease 0s forwards;
+    }
+
+    @keyframes fadeout {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes fadeout_paint {
+      0% { /* 初期状態 */
+        transform: translate(0, 0) scale(1);
+        width: 100%; height: 100%;
+        border-radius: 0;
+      }
+      30% { /* 小さなボール状に変化 */
+        transform: translate(305px, 205px) scale(1);
+        width: 40px; height: 40px;
+        border-radius: 50%;
+      }
+      50% {
+        transform: translate(305px, 205px) scale(1.3);
+        width: 40px; height: 40px;
+        border-radius: 50%;
+      }
+      70% { /* バウンドしたように弾ませる */
+        transform: translate(305px, 205px) scale(1);
+        width: 40px; height: 40px;
+        border-radius: 50%;
+      }
+      100% { /* 画面左に逃げていく */
+        transform: translate(-40px, 205px) scale(1);
+        width: 40px; height: 40px;
+        border-radius: 50%;
+      }
+    }
+
+    /*** 画面表示のアニメーション ***/
+    .paint { animation: fadeout_paint 1s ease 0.5s forwards; }
+
+    @keyframes show_image {
+      0%   { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    /*** スライドショーのアニメーション ***/
+    .images .image:nth-child(1) { animation: show_image 0.6s ease 1.5s forwards; }
+    .images .image:nth-child(2) { animation: show_image 0.6s ease 1.7s forwards; }
+    .images .image:nth-child(3) { animation: show_image 0.6s ease 1.9s forwards; }
+    .images .image:nth-child(4) { animation: show_image 0.6s ease 2.1s forwards; }
+</style>
+</head>
+<body>
+
+
+    <main id="root">
+        <!--screenはスライドショーの土台-->
+        <div id="screen">
+            <!--imagesは画像一覧の要素-->
+            <section class="images">
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+                <div class="image"></div>
+            </section>
+        <!--最初にスライドショー全体に覆い被せる要素-->
+        <section class="paint"></section>
+        </div>
+    </main>
+
+</body>
+</html>
