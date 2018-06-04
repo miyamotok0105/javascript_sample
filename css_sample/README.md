@@ -13,6 +13,10 @@ https://codepen.io/fixcl/pen/rOOzQB
 https://codepen.io/EduardoLopes/
 https://codepen.io/jonobr1/
 
+cssのパワーを過信していた。    
+https://codepen.io/search/pens?q=css%20animation&page=3&order=popularity&depth=everything&show_forks=false    
+
+
 - transitionでシュンシュンする。    
 
 これもいずれ動かしたい    
