@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- このフォームの入力値を新しいモンスターの名前に使う -->
+    名前
+    <input v-model="name">
+    <button v-on:click="doAdd">モンスターを追加</button>
+    <ul>
+      <li v-for="item in list" v-bind:key="item.id">
+        ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+      </li>
+    </ul>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main006.js"></script>
+</body>
+</html>

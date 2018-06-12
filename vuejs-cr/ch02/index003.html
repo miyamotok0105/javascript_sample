@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Vue.js App</title>
+  <!--css追加-->
   <link href="main003.css" rel="stylesheet">
 </head>
 <body>
@@ -12,6 +13,7 @@
       <p v-bind:class="{ child: isChild, 'is-active': isActive }" class="item">
         動的なクラス
       </p>
+      <!--v-bindでcssもいけんのか-->
       <p v-bind:style="{ color: textColor, backgroundColor: bgColor }" class="item">
         動的なスタイル
       </p>

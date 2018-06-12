@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(item, index) in list" v-bind:key="item.id" v-if="item.hp">
+        ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+        <!--v-ifとの組み合わせだね-->
+        <span v-if="item.hp < 50">瀕死！</span>
+        <!-- ボタンはv-for内に作成 -->
+        <button v-on:click="doAttack(index)">攻撃する</button>
+      </li>
+    </ul>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main008.js"></script>
+</body>
+</html>

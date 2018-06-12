@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="handleClick">カウントアップ</button>
+    <button v-on:click="show=!show">表示/非表示</button>
+    <!--refに指定-->
+    <span ref="count" v-if="show">0</span>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main010.js"></script>
+</body>
+</html>
