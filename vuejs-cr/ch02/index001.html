@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- 1 オブジェクトのプロパティを表示 -->
+    <p>{{ message.value }}</p>
+    <!-- 2 文字列の長さを表示 -->
+    <p>{{ message.value.length }}</p>
+    <!-- 3 リストのインデックス2を表示 -->
+    <p>{{ list[2] }}</p>
+    <!-- 4 プロパティを組み合わせて使用 -->
+    <p>{{ list[num] }}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main001.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main003.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div id="app">
+      <button v-on:click="isActive=!isActive">isActiveを切り替える</button>
+      <p v-bind:class="{ child: isChild, 'is-active': isActive }" class="item">
+        動的なクラス
+      </p>
+      <p v-bind:style="{ color: textColor, backgroundColor: bgColor }" class="item">
+        動的なスタイル
+      </p>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main003.js"></script>
+</body>
+</html>
