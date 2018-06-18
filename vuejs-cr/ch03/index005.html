@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <h1>チェックボックス</h1>
+    <h2>単一</h2>
+    <label>
+      <input type="checkbox" v-model="val"> {{ val }}
+    </label>
+
+    <h2>複数</h2>
+    <label><input type="checkbox" v-model="val2" value="A"> A</label>
+    <label><input type="checkbox" v-model="val2" value="B"> B</label>
+    <label><input type="checkbox" v-model="val2" value="C"> C</label>
+    <p>{{ val2 }}</p>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main005.js"></script>
+</body>
+</html>

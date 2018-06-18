@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <h2>右クリックしてね</h2>
+    <div v-on:click.right="handler">example</div>
+    <!-- 右ボタンを押した時のコンテキストメニューを表示させない -->
+    <div v-on:click.right.prevent="handler">example</div>
+
+    <p>{{ message }}</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main003.js"></script>
+</body>
+</html>
