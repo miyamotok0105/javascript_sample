@@ -3,6 +3,13 @@
 # 書籍の神サポートページ
 
 https://cr-vue.mio3io.com/
+    
+
+ここにコードもあった    
+https://github.com/mio3io/cr-vue/tree/master/docs/.vuepress/components/guide    
+
+sandboxesにも    
+https://codesandbox.io/u/mio3io/sandboxes
 
 
 # lint効いてるじゃないか。。と思った時に見た記事
