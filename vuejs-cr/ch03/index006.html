@@ -19,9 +19,32 @@
     <label><input type="checkbox" v-model="val2" value="C"> C</label>
     <p>{{ val2 }}</p>
 
+    <label><input type="radio" value="a" v-model="val3"> A</label>
+    <label><input type="radio" value="b" v-model="val3"> B</label>
+    <label><input type="radio" value="c" v-model="val3"> C</label>
+    <p>{{ val3 }}</p>
+
+    <h1>セレクトボックス</h1>
+    <h2>単一</h2>
+    <select v-model="val4">
+      <option disabled="disabled">選択してください</option>
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="c">C</option>
+    </select>
+    <p>{{ val4 }}</p>
+
+    <h2>複数  </h2>
+    <select v-model="val5" multiple>
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="c">C</option>
+    </select>
+    <p>{{ val5 }}</p>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  <script src="main005.js"></script>
+  <script src="main006.js"></script>
 </body>
 </html>

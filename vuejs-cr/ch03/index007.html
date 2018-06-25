@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <h1>画像ファイル</h1>
+    <input type="file" v-on:change="handleChange">
+    <div v-if="preview"><img v-bind:src="preview"></div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main007.js"></script>
+</body>
+</html>
