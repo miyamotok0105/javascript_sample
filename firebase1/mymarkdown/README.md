@@ -1,18 +1,31 @@
 # mymarkdown
 
-> A Vue.js project
+基本コマンド
 
-## Build Setup
 
 ``` bash
-# install dependencies
+#インストール系
 npm install
-
-# serve with hot reload at localhost:8080
+#デバッグ
 npm run dev
-
-# build for production with minification
+#ビルど
 npm run build
+#認証
+firebase login
+#ホスティング
+firebase init hosting
+#デプロイ
+firebase deploy
+#ローカル確認
+firebase serve
+#消す
+firebase hosting:disable
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+Vue.jsとFirebaseで作るミニWebサービス サポートリポジトリ    
+
+https://github.com/nabettu/mymarkdown
+
+の本を勉強する
+
