@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SVG Sandbox</title>
+  <style>
+    body {
+      background: #EEE;
+    }
+    svg {
+      background: #FFF;
+    }
+    line {
+      stroke: #333;
+      stroke-width: 3;
+    }
+    path {
+      stroke: #333;
+      stroke-width: 3;
+      fill: none;
+    }
+    rect {
+      fill: #CCC;
+      stroke: #333;
+    }
+    /* なんかこれカッコいい動きする */
+    circle{
+      fill: #333;
+      transition: all 0.4s cubic-bezier(.96,.04,.04,.96);
+      stroke: rgb(119, 0, 255);
+      stroke-width: 1px;
+    }
+    .active{
+      fill: white;
+      stroke-width: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- svgはバインディングと相性が良い！！x1でバインディング -->
+    <svg viewbox="0 0 300 300" width="300" height="300">
+      <circle r=50 cx=150 cy=150 @click="active = !active" :class="{'active': active}"></circle>
+    </svg>
+    <div>
+      
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@2.5.9/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        active: false
+      },
+      mounted() {
+      },
+      methods: {
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>

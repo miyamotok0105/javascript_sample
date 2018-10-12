@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SVG Sandbox</title>
+  <style>
+    body {
+      background: #EEE;
+    }
+    svg {
+      background: #FFF;
+    }
+    line {
+      stroke: #333;
+      stroke-width: 3;
+    }
+    path {
+      stroke: #333;
+      stroke-width: 3;
+      fill: none;
+    }
+    rect {
+      fill: #CCC;
+      stroke: #333;
+    }
+    circle {
+      fill: #CCC;
+      stroke: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- svgはバインディングと相性が良い！！x1でバインディング -->
+    <svg viewbox="0 0 500 400" width="500" height="400">
+      <line :x1="x1" y1=100 x2=200 y2=200 stroke="black"></line>
+    </svg>
+    <div>
+      <input type="range" v-model="x1">
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@2.5.9/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        x1: 100
+      },
+      mounted() {
+      },
+      methods: {
+      }
+    })
+  </script>
+</body>
+
+</html>
