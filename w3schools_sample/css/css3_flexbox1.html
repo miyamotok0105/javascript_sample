@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.flex-container {
+  /* displayプロパティをflexにするとフレキシブルになる */
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container-direction-col {
+  display: flex;
+  /* 縦に並ぶ */
+  flex-direction: column;
+  background-color: DodgerBlue;
+}
+
+.flex-container-direction-col-rev {
+  display: flex;
+  /* 逆になる */
+  flex-direction: column-reverse;
+  background-color: DodgerBlue;
+}
+
+.flex-container-direction-row {
+  display: flex;
+  /* 横に並ぶ */
+  flex-direction: row;
+  background-color: DodgerBlue;
+}
+
+.flex-container-wrap {
+  display: flex;
+  /*  */
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container-wrap-rev {
+  display: flex;
+  /*  */
+  flex-wrap: wrap-reverse;
+  background-color: DodgerBlue;
+}
+
+.flex-container-flow-row-wrap {
+  display: flex;
+  /*  */
+  flex-flow: row wrap;
+  background-color: DodgerBlue;
+}
+
+/* ==========justify========== */
+
+.flex-container-justify-center {
+  display: flex;
+  
+  justify-content: center;
+  background-color: DodgerBlue;
+}
+
+.flex-container-justify-flex-end {
+  display: flex;
+  
+  justify-content: flex-end;
+  background-color: DodgerBlue;
+}
+
+.flex-container-justify-space-around {
+  display: flex;
+  
+  justify-content: space-around;
+  background-color: DodgerBlue;
+}
+
+/* ==========align-items========== */
+
+.flex-container-align-items-center {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  background-color: DodgerBlue;
+}
+
+
+div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>フレキシブルレイアウト</h1>
+
+参考
+https://www.w3schools.com/css/css3_flexbox.asp
+
+
+<h1>display:flex</h1>
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+<h1>flex-direction: column</h1>
+<div class="flex-container-direction-col">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+<h1>flex-direction: column-reverse</h1>
+<div class="flex-container-direction-col-rev">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+<h1>flex-direction: row</h1>
+<div class="flex-container-direction-row">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+<h1>flex-wrapプロパティ</h1>
+折り返す。wrapしないとboxは出ちゃうよ。nowrapがデフォルト。
+
+<div class="flex-container-wrap">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+<div class="flex-container-wrap-rev">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+
+<h1>flex-flowプロパティ</h1>
+flwx-flowはflex-directionとflex-wrapの2つを簡単に設定できる。
+
+<div class="flex-container-flow-row-wrap">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+
+<h1>justify-contentプロパティ</h1>
+justify centerでflex itemをalign真ん中にする。足りないとハミ出る。
+
+justify-content: center;
+<div class="flex-container-justify-center">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+justify-content: flex-end;
+<div class="flex-container-justify-flex-end">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+justify-content: space-around;
+<div class="flex-container-justify-space-around">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+<h1>align-itemsプロパティ</h1>
+
+<div class="flex-container-align-items-center">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+
+</body>
+</html> 
