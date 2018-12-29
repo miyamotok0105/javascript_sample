@@ -4,6 +4,7 @@
 
 webpack知らんがなって感じである為にざっくり勉強する所存。    
 webpack v4が新しいのかな。    
+webpackはjsをまとめて一つにしたりできる。    
 
 https://webpack.js.org/guides/installation/
 
@@ -228,6 +229,8 @@ https://webpack.js.org/guides/asset-management/
 ## ３.[Asset Management](https://webpack.js.org/guides/asset-management/)
 
 
+js内にcssを入れれる。画像、フォント、ファイルデータなども管理することができる。    
+
 まずは設定する。
 
 
@@ -343,4 +346,15 @@ touch src/style.css
   color: red;
 }
 ```
+
+## ３.[Output Management](https://webpack.js.org/guides/output-management/#preparation)
+
+もう少し制御しようと思ったら、この辺を進めればいい。    
+一旦はこの辺で置いておく。    
+
+>bundleファイルの制御と管理の自動化
+
+https://qiita.com/sugamondo/items/a75e7692db20663a5497
+
+
 
