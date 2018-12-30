@@ -1,0 +1,25 @@
+{
+  "name": "gulp_webpack_babel",
+  "version": "1.0.0",
+  "description": "webpack：jsのバンドル     gulp：jsのバンドル、cssコンパイルなど     Babel：jsのトランスコンパイルなど",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "@babel/preset-env": "^7.2.3",
+    "gulp": "^4.0.0",
+    "webpack": "^4.28.2",
+    "webpack-stream": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "@babel/preset-env": "^7.2.3",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

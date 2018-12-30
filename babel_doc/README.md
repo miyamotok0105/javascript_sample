@@ -223,3 +223,98 @@ npm install --save-dev @babel/preset-env
 ./node_modules/.bin/babel src --out-dir lib --presets=@babel/env
 ```
 
+## [Babelの設定](https://babeljs.io/docs/en/configuration)
+
+Babelでは設定ファイルが便利。ESLint(.eslintrc)とかPrettier(.prettierrc)が似たツール。
+
+### 設定のケーススタディ    
+
+- babel.config.js    
+
+プログラム的に設定を作成したい場合。node_modulesをコンパイルしたい場合。
+
+- .babelrc    
+
+個人的なパッケージに設定を適応したい場合。
+
+### babel.config.js
+
+こんな感じの設定ファイル。ルートプロジェクトにおいてね。
+
+
+```js:babel.config.js
+module.exports = function () {
+  const presets = [ ... ];
+  const plugins = [ ... ];
+
+  return {
+    presets,
+    plugins
+  };
+}
+```
+
+細かくみたい場合は[ここ](https://babeljs.io/docs/en/config-files#project-wide-configuration)
+
+### .babelrc
+
+```.babelrc
+{
+  "presets": [...],
+  "plugins": [...]
+}
+```
+
+### package.json
+
+あるいはpackage.jsonにbabelの設定をかける。
+
+```package.json
+{
+  "name": "my-package",
+  "version": "1.0.0",
+  "babel": {
+    "presets": [ ... ],
+    "plugins": [ ... ],
+  }
+}
+```
+
+### .babelrc.js
+
+.babelrcと同じようにjsでも書ける。
+
+
+```.babelrc.js
+const presets = [ ... ];
+const plugins = [ ... ];
+
+module.exports = { presets, plugins };
+```
+
+nodejsにアクセスもできる。例えば動的な設定もできる。
+
+```.babelrc.js
+const presets = [ ... ];
+const plugins = [ ... ];
+
+if (process.env["ENV"] === "prod") {
+  plugins.push(...);
+}
+
+module.exports = { presets, plugins };
+```
+
+### CLI (@babel/cli)を使用する
+
+```
+babel --plugins @babel/plugin-transform-arrow-functions script.js
+```
+
+### API (@babel/core)を使用する
+
+```
+require("@babel/core").transform("code", {
+  plugins: ["@babel/plugin-transform-arrow-functions"]
+});
+```
