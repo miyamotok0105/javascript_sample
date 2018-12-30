@@ -1,0 +1,24 @@
+//変数を使える
+$takasa: 600px;
+
+#main{
+  width: 200px;
+  height: $takasa;
+}
+
+//演算を使える
+$takasa: 600px;
+
+#main{
+  width: 200px + 100;
+  height: $takasa / 2;
+}
+
+//関数を使える
+@function Double($value) {
+    @return round($value * 2);
+}
+
+.box{
+    width: Double(300px);
+}
