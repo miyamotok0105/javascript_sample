@@ -12,5 +12,6 @@ gulp.task('css', function () {
     .pipe(postcss([require('postcss-simple-vars')({ silent: true }) ])) //追加
     .pipe(postcss([require('postcss-custom-properties')])) //追加
     .pipe(postcss([require('postcss-import')])) //import
+    .pipe(postcss([require('postcss-nested')])) //ネスト
     .pipe(gulp.dest('dist'));
 });

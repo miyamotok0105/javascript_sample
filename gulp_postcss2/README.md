@@ -15,6 +15,7 @@ npm i autoprefixer --save-dev
 npm i postcss-custom-properties -D
 npm i postcss-simple-vars -D
 npm i postcss-import -D
+npm i postcss-nested -D
 ```
 
 
@@ -75,7 +76,19 @@ gulp.task('css', function () {
 });
 ```
 
+## 外部CSSをimport
 
+
+```
+@import "../import/index2.css";
+```
+
+
+## その他
+
+その他にもいっぱいある。    
+プラグイン一覧    
+https://github.com/postcss/postcss/blob/master/docs/plugins.md
 
 
 # 参照

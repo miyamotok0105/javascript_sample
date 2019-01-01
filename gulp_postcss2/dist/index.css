@@ -1,21 +1,25 @@
 
-/**/
+/* 別ファイルのimport */
 
 .hoge3 {
-  color: $blue;
+  color: red;
 }
+
+/* 変数 */
 
 .hoge1 {
   color: #20aee5;
 }
 
+/* ネスト */
+
 .hoge1 {
     color: #20aee5;
+}
 
-    & > li {
+.hoge1 > li {
         width: 20%;
     }
-}
 
 
 

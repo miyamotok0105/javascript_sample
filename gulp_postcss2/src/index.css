@@ -1,13 +1,18 @@
 
-/**/
+/* 別ファイルのimport */
 
 @import "../import/index2.css";
 
+/* 変数 */
 $blue: #20aee5;
 
 .hoge1 {
   color: $blue;
 }
+
+
+
+/* ネスト */
 
 .hoge1 {
     color: $blue;
