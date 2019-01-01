@@ -1,0 +1,21 @@
+
+/**/
+
+@import "../import/index2.css";
+
+$blue: #20aee5;
+
+.hoge1 {
+  color: $blue;
+}
+
+.hoge1 {
+    color: $blue;
+
+    & > li {
+        width: 20%;
+    }
+}
+
+
+
