@@ -1,0 +1,33 @@
+
+//２次元ベクトルオブジェクト
+let vevtor2 = {
+    x:3, y:4,
+    lengthSq:self => self.x * self.x + self.y * self.y,
+    add:(self, other) => {
+        self.x += other.x
+        self.y += other.y
+    }
+}
+
+console.log(vevtor2.lengthSq(vevtor2))
+
+const vevtor2_clone1 = (x, y) => {
+    return {
+        x, y,
+        lengthSq:self => self.x * self.x + self.y * self.y,
+        add:(self, other) => {
+            self.x += other.x
+            self.y += other.y
+        }
+    }
+}
+
+vevtor2a = vevtor2_clone1(20, 22)
+console.log(vevtor2a)
+
+vevtor2b = vevtor2_clone1(22, 20)
+console.log(vevtor2b)
+vevtor2a.add(vevtor2a, vevtor2b)
+console.log(vevtor2a)
+
+
