@@ -4,6 +4,6 @@
   "main": "main.js",
   "devDependencies": {
     "devtron": "^1.4.0",
-    "electron-builder": "^19.27.3"
+    "electron-builder": "^23.6.0"
   }
 }
